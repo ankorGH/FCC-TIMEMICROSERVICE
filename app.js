@@ -17,6 +17,12 @@ let month = {
     11:"December"
 }
 
+app.use(express.static(__dirname+"/public"))
+
+app.get("/", function(request,response){
+   response.sendFile(__dirname+"/index.html")
+})
+
 app.get("/:data", function (request, response) {
     let obj = {unix:null,natural:null}
     let data = request.params.data
