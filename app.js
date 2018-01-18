@@ -1,5 +1,6 @@
 const express = require("express")
 const app = express();
+const port = process.env.PORT || 3000;
 
 let month = {
     0:"January",
@@ -53,6 +54,6 @@ app.get("/:data", function (request, response) {
     return true;
   }
   
-let listener = app.listen(3000,() => {
-    console.log("listening at port 3000")
+let listener = app.listen(port,() => {
+    console.log(`listening at port ${port}`)
 })
